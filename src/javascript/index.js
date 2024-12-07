@@ -1,51 +1,60 @@
-$(document).ready(function() {
-    
-    solicitudes = [
-        solicitud = {
-            "id": 1,
-            "nombre": "Juan",
-            "apellido": "Secreto"
-        },
-        solicitud = {
-            "id": 1,
-            "nombre": "Alvaro",
-            "apellido": "Rueda"
-        },
-        solicitud = {
-            "id": 1,
-            "nombre": "Alfredo",
-            "apellido": "Galvan"
-        }];
-    
+$(document).ready(function(){
+    // programar botón 1
+    $('#boton1').click(function() {
+        console.log('¡Botón clickeado!');
+        
+    });
+    // Botón que desaparece
+    $('#boton2').click(function() {
+        $(this).hide();
+    });
 
-    for(i=0; i < solicitudes.length; i++){
-        $("#maestro").append(
-            $("<li>").text(solicitudes[i].nombre + ' ' + solicitudes[i].apellido)
-        );
+    // programar boton 3
+    $('#boton3').click(function() {
+        console.log('¡Botón clickeado!');
+        $('#boton4').show();
+        
+    });
+
+    // Mostrar la matriz como listas ordenadas
+    const matriz = [
+        [7, 8, 3, 1, 6], 
+        [9, 5, 6, 2, 11],
+        [1, 5, 8, 10, 3]  
+    ];
+
+    function mostrarMatrizEnLista(matriz) {
+        const $contenedor = $("#lista");
+
+        matriz.forEach(fila => {
+            // Crear una lista ordenada para cada fila
+            const $ol = $("<ol>");
+            fila.forEach(celda => {
+                // Agregar cada número como un elemento de lista
+                const $li = $("<li>").text(celda);
+                $ol.append($li);
+            });
+            // Agregar la lista ordenada al contenedor
+            $contenedor.append($ol);
+        });
     }
 
+    // Mostrar la matriz en listas ordenadas
+    mostrarMatrizEnLista(matriz);
     
-    $("#id").val(solicitud.id); // Fijaria el valor
-    $('#nombre').val(solicitud.nombre);
-    $('#apellido').val(solicitud.apellido);
+    // Saludar
+    $("#boton5").click(function() {
+        const textoInput = $("#textoInput").val().trim(); 
 
-    $("li").on("click", function() {
-        if($("#detalle").is(":visible")){
-            $("#detalle").hide(); 
-        } else{ 
-            $("#detalle").hide();
+        let textoSalida;
+        if (textoInput !== "") {
+            // Si hay texto, solo muestra "Hola"
+            textoSalida = "Hola";
+        } else {
+            // Si está vacío, muestra siempre "HolaHola"
+            textoSalida = "HolaHola";
         }
-        
-    })
 
+        $("#salida").text(textoSalida);
+    });
 });
-
-
-/*document.getElementById('boton').onclick = function() {
-    alert('Me ha presionado... me voy de vacaciones a relajarme');
-}
-document.getElementById('boton').onclick = function() {
-    this.innerText = 'Ya me ha comido <br> En otra linea';
-}
-
-console.log('Hola mundo... tercera vez');*/

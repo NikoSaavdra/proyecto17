@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi aplicación</title>
     <script src="../node_modules/jquery/dist/jquery.js"></script>
 </head>
-<body>
-    <button id="boton">Cómeme</button>
-    
-    <h1>Maestro</h1>
-    <ul id="maestro">
-    </ul>
 
-    <div id="detalle">
-    <h1>Detalle</h1>
-    <form>
-        <input type="hidden" id="id">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre">
-        <label for="apellido">Apellido:</label>
-        <input type="text" id="apellido" name="apellido">
-    </form>
-    </div>
+<body>
+    <button id="boton1">Presionar</button><br>
+
+    <button id="boton2">Desaparece Ya</button><br>
+
+    <button id="boton3">Generar botón4</button><br>
+
+    <button id="boton4" style="display:none;">Soy el cuarto botón</button><br>
+
+    <button id="boton5">Saludar</button><br>
+
+    <div id="salida"></div> <!-- Se mostrará el resultado de Saludar -->
+
+    <input type="text" id="textoInput" placeholder="Escribe algo aquí">
+
+    <div id="lista"></div> <!-- Se mostrará la matriz -->
 
     <script src="/src/javascript/index.js"></script>
-   
-
 </body>
+
 </html>
