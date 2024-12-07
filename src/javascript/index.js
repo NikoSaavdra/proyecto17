@@ -4,12 +4,12 @@ $(document).ready(function(){
         console.log('¡Botón clickeado!');
         
     });
-    // Botón que desaparece
+    // Botón 2 que desaparece
     $('#boton2').click(function() {
         $(this).hide();
     });
 
-    // programar boton 3
+    // programar botón 3
     $('#boton3').click(function() {
         console.log('¡Botón clickeado!');
         $('#boton4').show();
