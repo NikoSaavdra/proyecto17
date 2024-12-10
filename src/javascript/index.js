@@ -14,6 +14,7 @@ $(function() {
 
     $("#boton3").on("click", function(){
         var datos = {
+              id: 0, // para reserver una id
               nombre: "Roberto",
               apellido: "Carlos"
         }
