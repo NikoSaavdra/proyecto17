@@ -1,18 +1,21 @@
 
 $(function() {
     $("#boton1").on("click", function(){
+        
         $.get("https://my-json-server.typicode.com/desarrollo-seguro/dato/solicitudes", function(data){
             $("#resListar").text("Ok");
         })     
     })
 
     $("#boton2").on("click", function(){
+    
         $.get("https://my-json-server.typicode.com/desarrollo-seguro/dato/solicitudes/1", function(data){
             $("#resLeer").text("Ok");
         })
     });
 
     $("#boton3").on("click", function(){
+        $(this).addClass('row')
         var datos = {
               id: 0, // para reserver una id
               nombre: "Roberto",
@@ -24,6 +27,7 @@ $(function() {
     })
 
     $("#boton4").on("click", function(){
+        
         var actualizar = {
             nombre: "Fernando Ariel",
             apellido: "Dominguez"
